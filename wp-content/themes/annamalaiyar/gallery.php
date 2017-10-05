@@ -1,4 +1,4 @@
-<?php /* Template Name: About Page */ ?>
+<?php /* Template Name: Gallery Page */ ?>
 <?php get_header(); ?>
 			<!-- Container -->
 
@@ -8,7 +8,7 @@
 	            <div class="container center767">
 									<h1><?=get_the_title();?></h1>
 									<?php
-										$page = get_page_by_title( 'About Temple' );
+										$page = get_page_by_title( 'Gallery' );
 										$content = apply_filters('the_content', $page->post_content);
 										echo $content;
 									?>

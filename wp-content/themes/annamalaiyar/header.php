@@ -29,9 +29,6 @@
 <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/ie.css" type="text/css">
 <![endif]-->
 <style>
-body{
-  margin-top: -36px !important;
-}
 </style>
 <?php wp_head(); ?>
 </head>
@@ -44,7 +41,7 @@ body{
         <div id="stuck_container" class="stuck_container">
             <nav class="navbar">
                 <div class="navbar-brand">
-                    <a href="./">
+                    <a href="<?php echo get_home_url();?>">
                         <h1 class="brand_name">
                             Annamalaiyar
                         </h1>

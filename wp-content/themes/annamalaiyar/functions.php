@@ -53,7 +53,25 @@ function banner_shortcode($atts,$content = null) {
   $imgPathContArr = wp_upload_dir();
   $imgPathCont = $imgPathContArr['baseurl'];
   $output = '';
-  $output .= '<div data-src="'.$imgPathCont.'/2017/10/front_view.jpg"></div>';
+  $output .= '<div data-src="'.$imgPathCont.''.$src.'"></div>';
 	return $output;
 }
 add_shortcode('banner','banner_shortcode');
+
+function home_content_shortcode($atts,$content = null) {
+  extract(shortcode_atts(array( 'src' => '', 'title' => ''),$atts));
+  $imgPathContArr = wp_upload_dir();
+  $imgPathCont = $imgPathContArr['baseurl'];
+  $output = '';
+  $output .= '<div class="item">';
+  $output .= '<div>';
+  $output .= '<img src="'.$imgPathCont.''.$src.'" alt="">';
+  $output .= '<h3 class="ttu">'.$title.'</h3>';
+  $output .= '<p class="p__mod">'.$content.'</p>';
+  $output .= '<a href="#" class="btn-link">Learn more</a>';
+  $output .= '</div>';
+  $output .= '</div>';
+
+	return $output;
+}
+add_shortcode('home_content','home_content_shortcode');
