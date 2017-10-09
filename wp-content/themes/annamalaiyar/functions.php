@@ -62,8 +62,7 @@ function home_content_shortcode($atts,$content = null) {
   extract(shortcode_atts(array( 'src' => '', 'title' => ''),$atts));
   $imgPathContArr = wp_upload_dir();
   $imgPathCont = $imgPathContArr['baseurl'];
-  $output = '';
-  $output .= '<div class="item">';
+  $output = '<div class="item">';
   $output .= '<div>';
   $output .= '<img src="'.$imgPathCont.''.$src.'" alt="">';
   $output .= '<h3 class="ttu">'.$title.'</h3>';

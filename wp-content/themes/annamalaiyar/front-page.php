@@ -23,60 +23,10 @@
 	            <div class="container">
 	                <div class="owl-carousel">
 											<?php
-												// $page = get_page_by_title( 'Home Content1' );
-												// $content = apply_filters('the_content', $page->post_content);
-												// echo $content;
+												$page = get_page_by_title( 'Home Content1' );
+												$content = apply_filters('the_content', $page->post_content);
+												echo substr($content,3,-3);
 											?>
-	                    <div class="item">
-	                        <div>
-	                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/page-1_img02.jpg" alt=""/>
-
-	                            <h3 class="ttu">consectetuer </h3>
-
-	                            <p class="p__mod">Lorem ipsum dolor sit amet, conct adipi scing elit. Praesent
-	                                vestibulum molestie nonummy hend
-	                                rerit maur is. Phasellus porta. Fusce susc varius mi. Cum sociis
-	                                natoque pen et magnis dis
-	                                parturient montes, nascetur ridicus mus. Nulla dui. Fusce feu giat malesuada odio.
-	                                Morbi
-	                                nunc odio.</p>
-	                            <a href="#" class="btn-link">Learn more</a>
-	                        </div>
-
-	                    </div>
-
-	                    <div class="item">
-	                        <div>
-	                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/page-1_img03.jpg" alt=""/>
-
-	                            <h3 class="ttu">adipiscing elit</h3>
-
-	                            <p class="p__mod">Lorem ipsum dolor sit amet, conct adipi scing elit. Praesent
-	                                vestibulum molestie nonummy hend
-	                                rerit mauris. Phasellus porta. Fusce susc varius mi. Cum sociis natoque pen et
-	                                magnis dis
-	                                parturient montes, nascetur ridicus mus. Nulla dui. Fusce feu giat malesuada odio.
-	                                Morbi
-	                                nunc odio.</p>
-	                            <a href="#" class="btn-link">Learn more</a>
-	                        </div>
-	                    </div>
-
-	                    <div class="item">
-
-	                        <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/page-1_img04.jpg" alt=""/>
-
-	                        <h3 class="ttu">Praesent lum </h3>
-
-	                        <p class="p__mod">Lorem ipsum dolor sit amet, conct adipi scing elit. Praesent
-	                            vestibulum molestie nonummy hend
-	                            rerit mauris. Phasellus porta. Fusce susc varius mi. Cum sociis natoque pen et
-	                            magnis dis
-	                            parturient montes, nascetur ridicus mus. Nulla dui. Fusce feu giat malesuada odio.
-	                            Morbi
-	                            nunc odio.</p>
-	                        <a href="#" class="btn-link">Learn more</a>
-	                    </div>
 	                </div>
 	            </div>
 	        </section>
