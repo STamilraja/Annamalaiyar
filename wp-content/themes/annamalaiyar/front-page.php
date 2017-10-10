@@ -312,7 +312,8 @@
 	                <h2 class="ttu">Gallery</h2>
 
 	                <div class="row offs">
-	                    <div class="col-md-4 col-sm-4 col-xs-12">
+										<?php //echo photo_gallery(2); ?>
+											<div class="col-md-4 col-sm-4 col-xs-12">
 	                        <a class="thumb thumbnail2" data-fancybox-group="1" href="<?php echo get_stylesheet_directory_uri();?>/assets/images/page-1_img08_original.jpg">
 	                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/page-1_img08.jpg" alt=""/>
 

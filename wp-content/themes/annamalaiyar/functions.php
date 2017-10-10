@@ -74,3 +74,38 @@ function home_content_shortcode($atts,$content = null) {
 	return $output;
 }
 add_shortcode('home_content','home_content_shortcode');
+
+
+function pw_show_gallery_image_urls( $content ) {
+
+ 	global $post;
+
+ 	// Only do this on singular items
+ 	if( ! is_singular() )
+ 		return $content;
+
+ 	// Make sure the post has a gallery in it
+ 	if( ! has_shortcode( $post->post_content, 'gallery' ) )
+ 		return $content;
+
+ 	// Retrieve the first gallery in the post
+ 	$gallery = get_post_gallery_images( $post );
+
+	$image_list = '<div class="col-md-4 col-sm-4 col-xs-12">';
+
+	// Loop through each image in each gallery
+	foreach( $gallery as $image_url ) {
+
+		$image_list .= '<a class="thumb thumbnail2" data-fancybox-group="1" href="'.$image_url.'">
+        <img src="' . $image_url . '" alt=""/><span class="thumb_overlay"></span></a>';
+
+	}
+  $image_list .= '</div>';
+
+	// Append our image list to the content of our post
+	$content .= $image_list;
+
+ 	return $content;
+
+ }
+ add_filter( 'the_content', 'pw_show_gallery_image_urls' );
