@@ -74,7 +74,9 @@
         </p>
     </div>
 </footer>
-
+<script>
+  var templateUrl = '<?php echo get_stylesheet_directory_uri();?>';
+</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php echo get_stylesheet_directory_uri();?>/assets/js/bootstrap.min.js"></script>
