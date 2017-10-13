@@ -8,7 +8,6 @@
 	            <div class="container center767">
 									<h1><?=get_the_title();?></h1>
 									<?php
-										$page = get_page_by_title( 'Gallery' );
 										$content = apply_filters('the_content', $page->post_content);
 										echo $content;
 									?>

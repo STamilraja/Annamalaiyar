@@ -4,31 +4,14 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 9999 );
 function theme_enqueue_styles() {
   wp_deregister_script('jquery');
   wp_dequeue_style( 'bootstrap-css' );
+  wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
 }
 
 function register_my_menu() {
   register_nav_menu('header-menu',__( 'Primary Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
-// feature shortcode
 
-// function welcome_shortcode($atts,$content = null)
-// {
-//     extract(shortcode_atts(array( 'title' => ''),$atts));
-//     $imgPathContArr = wp_upload_dir();
-//     $imgPathCont = $imgPathContArr['baseurl'];
-//     $output = '';
-//     $output .= '<div class="row">';
-//     $output .= '<div class="col-md-5 col-sm-6 col-xs-12 text-center">';
-//     $output .= '<img src="'.$imgPathCont.'" alt=""/></div>';
-//     $output .= '<div class="col-md-7 col-sm-6 col-xs-12 border-add md-add">';
-//     $output .= '<h2 class="ttu">'.$title.'</h2>';
-//     $output .= '<p class="p__mod">'.$content'</p>';
-//     $output .= '<a href="#" class="btn btn-primary">Click here</a>';
-//     $output .= '</div>';
-//     $output .= '</div>';
-//     return $output;
-// }
 function welcome_shortcode($atts,$content = null) {
   extract(shortcode_atts(array( 'title' => ''),$atts));
   $imgPathContArr = wp_upload_dir();
@@ -40,7 +23,7 @@ function welcome_shortcode($atts,$content = null) {
       $output .= '<div class="col-md-7 col-sm-6 col-xs-12 border-add md-add">';
       $output .= '<h2 class="ttu">'.$title.'</h2>';
       $output .= '<p class="p__mod">'.$content.'</p>';
-      $output .= '<a href="#" class="btn btn-primary">Click here</a>';
+      $output .= '<a href="'.get_home_url().'/index.php/welcome-content" class="btn btn-primary">Click here</a>';
       $output .= '</div>';
       $output .= '</div>';
       $output .= '</div>';
@@ -91,13 +74,13 @@ function pw_show_gallery_image_urls( $content ) {
  	// Retrieve the first gallery in the post
  	$gallery = get_post_gallery_images( $post );
 
-	$image_list = '<div class="col-md-4 col-sm-4 col-xs-12">';
+	$image_list = '<div class="row">';
 
 	// Loop through each image in each gallery
 	foreach( $gallery as $image_url ) {
 
-		$image_list .= '<a class="thumb thumbnail2" data-fancybox-group="1" href="'.$image_url.'">
-        <img src="' . $image_url . '" alt=""/><span class="thumb_overlay"></span></a>';
+		$image_list .= '<div class="col-md-4 col-sm-4 col-xs-12 m-t-b-15"><a class="thumb thumbnail2" data-fancybox-group="1" href="'.$image_url.'">
+        <img src="' . $image_url . '" alt=""/><span class="thumb_overlay"></span></a></div>';
 
 	}
   $image_list .= '</div>';
