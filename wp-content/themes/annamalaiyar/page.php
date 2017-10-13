@@ -31,11 +31,8 @@ get_header(); ?>
 		endwhile;
 		?>
 
-	</main><!-- .site-main -->
-
-	<?php get_sidebar( 'content-bottom' ); ?>
+	</main>
 
 </div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
