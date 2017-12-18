@@ -43,7 +43,7 @@
                 <div class="navbar-brand">
                     <a href="<?php echo get_home_url();?>">
                         <h1 class="brand_name">
-                            Annamalaiyar
+                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/logo.png" class="logo" alt="Logo" title="Annamalaiyar">
                         </h1>
                     </a>
                 </div>
