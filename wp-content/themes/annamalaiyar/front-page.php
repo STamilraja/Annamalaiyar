@@ -62,7 +62,8 @@
 											  ?>
 												<div class="col-md-4 col-sm-4 col-xs-12" style="vertical-align:bottom;">
 		                        <article class="wow fadeInUp"  style="vertical-align:bottom;" data-wow-duration="2s" data-wow-delay="0.3s">
-		                            <time class="ff__mod" datetime="2015-01-01">16/08/2015</time>
+		                            <time class="ff__mod" datetime="2015-01-01"><?php echo get_the_date( 'd-m-Y' ); ?>
+</time>
 		                            <h4 class="ttu ff__mod"><?=get_the_title();?></h4>
 																<p> <?php $content=apply_filters('the_content', $post->post_content);
 																	$postOutput = preg_replace('/<img[^>]+./','', $content);
