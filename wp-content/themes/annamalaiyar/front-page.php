@@ -66,7 +66,7 @@
 		                            <h4 class="ttu ff__mod"><?=get_the_title();?></h4>
 																<p> <?php $content=apply_filters('the_content', $post->post_content);
 																	$postOutput = preg_replace('/<img[^>]+./','', $content);
-																	echo substr($postOutput,200);
+																	echo substr($postOutput, 0,350).'...';
 																?></p>
 
 		                        </article>
